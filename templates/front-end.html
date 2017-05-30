@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin=    "anonymous">
+	</head>
+
+  <body>
+  <div class="container">	
+	<div id="chartContainer" style="height: 300px; width: 1024px;"></div>
+    <form>
+			<input id="year_from" type="text" name="from"><label for="from"> From</label><br>
+			<input id="year_to" type="text" name="to" >   <label for="to"> to</label><br>
+			<input id="radio_tmax_C" type="radio" name="weather" ><label for="max"> Max-Temp</label><br>
+	  	<input id="radio_tmin_C" type="radio" name="weather" ><label for="min"> Min-Temp</label><br>
+	  	<input id="radio_sunshine_hours" type="radio" name="weather" ><label for="sun"> Sunshine hours</label><br>
+	  	<input id="radio_rain_mm" type="radio" name="weather"><label for="rain"> Rain mm</label><br>
+      <div id="demo">
+        <input type="button" id='btn' value="Display" name="display"></input>
+      </div>
+    </form>
+    </div>
+    <script src="{{ url_for('static', filename='./js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='./js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='./js/canvasjs.min.js') }}"></script>
+	</body> 
+</html>
