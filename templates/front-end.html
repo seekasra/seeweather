@@ -1,26 +1,57 @@
-<!DOCTYPE HTML>
 <html>
-	<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin=    "anonymous">
-	</head>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin=    "anonymous">
+</head>
 
-  <body>
-  <div class="container">	
-	<div id="chartContainer" style="height: 300px; width: 1024px;"></div>
-    <form>
-			<input id="year_from" type="text" name="from"><label for="from"> From</label><br>
-			<input id="year_to" type="text" name="to" >   <label for="to"> to</label><br>
-			<input id="radio_tmax_C" type="radio" name="weather" ><label for="max"> Max-Temp</label><br>
-	  	<input id="radio_tmin_C" type="radio" name="weather" ><label for="min"> Min-Temp</label><br>
-	  	<input id="radio_sunshine_hours" type="radio" name="weather" ><label for="sun"> Sunshine hours</label><br>
-	  	<input id="radio_rain_mm" type="radio" name="weather"><label for="rain"> Rain mm</label><br>
-      <div id="demo">
-        <input type="button" id='btn' value="Display" name="display"></input>
-      </div>
-    </form>
+<body>
+  <div class="container">
+    <div class="row">
+        <form>
+            <div class="row">
+              <div class="row">
+                <div class="col-lg-offset-3 col-lg-3">
+                  <label for="year_from">From:</label>
+                  <input type="text" id="year_from" class="form-control" name="from" placeholder="YYYYMM e.g. 196311">
+                </div>
+                <div class="col-lg-3">
+                  <label for="year_from">To:</label>
+                  <input type="text" id="year_to" class="form-control" name="to" placeholder="YYYYMM e.g. 200102">
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-lg-offset-3 col-lg-6">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" id="radio_tmax_C" name="weather" checked> Maximum Temprature (C)
+                </label>
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" id="radio_tmin_C" name="weather" > Minimum Temprature (C)
+                </label>
+                </br>
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" id="radio_sunshine_hours" name="weather" > Sunshine Hours
+                </label>
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" id="radio_rain_mm" name="weather"> Rain fall (mm)
+                </label>
+              </div>
+                </br>
+                <input style="align-content: center" type="button" id='btn' class="btn btn-primary" value="Display" name="display"/>
+              </div>
+            </div>
+        </form>
+
     </div>
-    <script src="{{ url_for('static', filename='./js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='./js/main.js') }}"></script>
-    <script src="{{ url_for('static', filename='./js/canvasjs.min.js') }}"></script>
-	</body> 
+
+    <div class="row">
+      <div id="chartContainer" style="height: 300px; width: 100%; max-width:1024px;"></div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='./js/jquery-3.2.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='./js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='./js/canvasjs.min.js') }}"></script>
+  </body>
 </html>
